@@ -1,0 +1,240 @@
+@-webkit-keyframes rotate {
+  0%   { transform: translate(50%, -50%) rotate(0deg); }
+  100% { transform: translate(50%, -50%) rotate(360deg); }
+}
+@-moz-keyframes rotate {
+  0%   { transform: translate(50%, -50%) rotate(0deg); }
+  100% { transform: translate(50%, -50%) rotate(360deg); }
+}
+@-o-keyframes rotate {
+  0%   { transform: translate(50%, -50%) rotate(0deg); }
+  100% { transform: translate(50%, -50%) rotate(360deg); }
+}
+@keyframes rotate {
+  0%   { transform: translate(50%, -50%) rotate(0deg); }
+  100% { transform: translate(50%, -50%) rotate(360deg); }
+}
+
+@-webkit-keyframes rotate-no-top {
+  0%   { transform: translate(50%, 0) rotate(0deg); }
+  100% { transform: translate(50%, 0) rotate(360deg); }
+}
+@-moz-keyframes rotate-no-top {
+  0%   { transform: translate(50%, 0) rotate(0deg); }
+  100% { transform: translate(50%, 0) rotate(360deg); }
+}
+@-o-keyframes rotate-no-top {
+  0%   { transform: translate(50%, 0) rotate(0deg); }
+  100% { transform: translate(50%, 0) rotate(360deg); }
+}
+@keyframes rotate-no-top {
+  0%   { transform: translate(50%, 0) rotate(0deg); }
+  100% { transform: translate(50%, 0) rotate(360deg); }
+}
+
+#spinner{
+  width: calc(70vw - 30rem);
+  height: calc(70vw - 30rem);
+  border: 1px solid #000;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  position: fixed;
+  right: 25%;
+  top: 50%;
+  transform: translate(50%, -50%);
+
+  animation: rotate ease infinite 24s;
+}
+
+#spinner:before,
+#spinner:after{
+  content: '';
+  position: absolute;
+}
+
+#spinner:before{
+  top: 50%;
+  transform: translateY(-50%);
+  width: calc(70vw - 30rem);
+  border-bottom: 1px solid #000;
+}
+
+#spinner:after{
+  left: 50%;
+  height: calc(70vw - 30rem);
+  border-right: 1px solid #000;
+  transform: translateX(-50%);
+}
+
+html, body{
+  font-size: 18px;
+}
+
+body{
+  background-color: rgb(243, 243, 243);
+  font-family: 'Fivo Sans', sans-serif;
+  margin: 1rem;
+  margin-top: 5.5rem;
+}
+
+h1, h2{
+  margin-bottom: 0.2rem;
+}
+
+h1{
+  font-weight: 800;
+}
+
+h2{
+  text-transform: uppercase;
+  color: #f00;
+  text-decoration: underline;
+  margin-bottom: 1rem;
+}
+
+p,
+li{
+  width: 35rem;
+  margin-bottom: 1rem;
+  line-height: 1.25em;
+}
+
+p em{
+  font-style: italic;
+}
+
+a:link,
+a:visited{
+  color: #33f;
+  text-decoration: none;
+}
+
+header{
+  position: fixed;
+  top: 0rem;
+  left: 0;
+  /*left: 1rem;*/
+  width: calc(100%);
+  background-color: rgb(243, 243, 243);
+  box-sizing: border-box;
+  padding: 1rem;
+  padding-bottom: 0;
+  border-bottom: 1px solid #000;
+  z-index: 10;
+}
+
+ul{
+  margin-bottom: 1rem;
+}
+
+li{
+  padding-left: 0.65rem;
+  margin-bottom: 0.4rem;
+  position: relative;
+}
+
+li:before{
+  content: '-';
+  position: absolute;
+  left: 0rem;
+}
+
+.table_line_item{
+  width: 35rem;
+  border-top: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+}
+
+.table_line_item li{
+  width: auto;
+}
+
+.table_line_item.first{
+  /*margin-top: 1rem;*/
+}
+
+.table_line_item.last{
+  border-bottom: 1px solid #000;
+  margin-bottom: 1rem;
+}
+
+.table_content{
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  padding: 1rem;
+  /*border-bottom: 1px solid #000;*/
+}
+
+.left{
+  width: 30%;
+}
+
+.right{
+  margin-bottom: 0;
+  border-left: 1px solid #000;
+  width: 70%;
+} 
+
+@media (max-width: 1100px){
+  html, body{
+    font-size: 16px;
+  }
+
+
+@media (max-width: 900px){
+  html, body{
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px){
+  html, body{
+    font-size: 18px;
+  }
+
+  #spinner{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 70vw;
+    height: 70vw;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    position: relative;
+    top: 0;
+    transform: translate(50%, 00%);
+
+    animation: rotate-no-top ease infinite 24s;
+  }
+
+  #spinner:before{
+    width: 100%;
+  }
+
+  #spinner:after{
+    height: 100%;
+  }
+
+  p,
+  li,
+  .table_line_item{
+    width: 99%;
+  }
+
+  .left{
+    width: 100%;
+    font-weight: 800;
+  }
+  .right{
+    border-left: 0;
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 580px){
+body{
+  margin-top: 8rem;
+}
+}
