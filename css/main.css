@@ -109,6 +109,10 @@ a:visited{
   text-decoration: none;
 }
 
+a:hover{
+  color: black;
+}
+
 header{
   position: fixed;
   top: 0rem;
